@@ -2,6 +2,7 @@
 *~
 *.log
 *.tgz
+*.json
 .DS_Store
 Gruntfile.js
 /node_modules

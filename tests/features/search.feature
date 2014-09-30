@@ -6,7 +6,7 @@ Scenario: Open [Engine] and search for "[Term]"
     When I search for "[Term]"
     Then should I see "[Result]"
 
-    Where:
+    Examples:
       Engine | Term            | Result
       Google | nodejs          | nodejs.org
       Google | selenium        | Web Browser Automation

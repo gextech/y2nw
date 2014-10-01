@@ -133,3 +133,9 @@ y2nw({
 ```
 
 Now you can execute the generated tests with **Nightwatch** or [grunt-nightwatch](https://github.com/gextech/grunt-nightwatch).
+
+
+Build status
+------------
+
+[![Build Status](https://travis-ci.org/gextech/y2nw.png?branch=master)](https://travis-ci.org/gextech/y2nw)

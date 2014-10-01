@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "Nightwatch tests from Yadda features",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "node lib/test.js"
+  },
   "author": {
     "name": "Alvaro Cabrera",
     "email": "pateketrueke@gmail.com"

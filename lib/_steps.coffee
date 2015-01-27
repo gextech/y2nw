@@ -1,5 +1,7 @@
 __Yadda = require('<%= yadda %>')
 
+<%= header %>
+
 __steps =
 <% _.each(scenarios.steps, function(steps, file) { %>
   <%= JSON.stringify(file) %>: ->

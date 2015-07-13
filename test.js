@@ -1,3 +1,5 @@
+'use strict';
+
 var path = require('path'),
     y2nw = require('../lib');
 

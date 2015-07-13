@@ -4,7 +4,10 @@ var path = require('path'),
     y2nw = require('./lib');
 
 y2nw({
-  header: 'STATIC = -> "value"',
+  header: [
+    'assert = require("assert")',
+    'STATIC = -> "value"'
+  ].join('\n'),
   src: __dirname + '/tests',
   dest: __dirname + '/generated',
   steps: __dirname + '/other'

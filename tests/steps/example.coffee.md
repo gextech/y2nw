@@ -1,7 +1,6 @@
 
     dummy = null
     result = null
-    assert = require('assert')
 
 Given a "$input".
 

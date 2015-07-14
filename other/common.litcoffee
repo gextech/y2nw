@@ -1,5 +1,11 @@
+---
+foo: bar
 
-And this test should be executed also.
+patterns:
+  BIG_PATTERN_TEST: And this test should be executed also
+---
+
+$BIG_PATTERN_TEST.
 
     ->
-      console.log ':D'
+      assert.equal params.foo, 'bar'

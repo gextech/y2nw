@@ -4,8 +4,9 @@
 *.tgz
 *.json
 .DS_Store
-Gruntfile.js
+Gruntfile.*
 /node_modules
-/lib/test.js
 /generated
+/other
 /tests
+/test.js

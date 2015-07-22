@@ -1,8 +1,13 @@
 @tags=foo,bar
+@before=all
+@after=all
 
 Feature: Example
 Description goes here
 and you'll MUST use that!
+
+@before=each
+@after=each
 
 Scenario: Testing only
 

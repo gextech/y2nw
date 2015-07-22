@@ -8,10 +8,25 @@ patterns:
 
     dummy = null
 
-before:
+@before all:
 
     ->
-      console.log 'OK!'
+      console.log 'before'
+
+@after all:
+
+    ->
+      console.log 'after'
+
+@before each:
+
+    ->
+      console.log 'beforeEach'
+
+@after each:
+
+    ->
+      console.log 'afterEach'
 
 $BIG_PATTERN_TEST.
 

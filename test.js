@@ -17,7 +17,7 @@ y2nw({
     process.exit(1);
   }
 
-  var suitcase = require(__dirname + '/generated/tests/example-suitcase');
+  var suitcase = require(__dirname + '/generated/tests/example/testing-only-suitcase');
 
   var browser = {
     end: function() {

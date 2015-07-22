@@ -24,7 +24,7 @@ __steps =
 <% _.each(steps, function(step) { %>
     .define <%= JSON.stringify(step.label) %>,
 <%= step.code %>
-      undefined
+
 <% }) }) %>
 
 __setup() for __file, __setup of __steps

@@ -27,7 +27,9 @@ y2nw({
 
   try {
     for (var test in suitcase) {
-      suitcase[test](browser);
+      if (typeof suitcase[test] === 'function') {
+        suitcase[test](browser);
+      }
     }
   } catch (e) {
     console.log(e);

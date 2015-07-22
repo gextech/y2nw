@@ -10,4 +10,4 @@ node_js:
 before_script:
   - 'npm install -g grunt-cli'
 script:
-  - 'grunt spec && node test.js'
+  - 'grunt eslint && node test.js'

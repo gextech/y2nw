@@ -8,6 +8,11 @@ patterns:
 
     dummy = null
 
+before:
+
+    ->
+      console.log 'OK!'
+
 $BIG_PATTERN_TEST.
 
     ->

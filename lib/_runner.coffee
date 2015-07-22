@@ -16,21 +16,15 @@ module.exports =
   %>
   '@disabled': <%= feature.annotations.skip || scenario.annotations.skip ? 'on' : 'off' %>
 
-<% if (feature.annotations.before && callbacks['before ' + feature.annotations.before]) { %>
-  before:
-<%= callbacks['before ' + feature.annotations.before] %><% } %>
+<% _.each(['before', 'after'], function (prefix) { %>
+<% if (feature.annotations[prefix] && callbacks[prefix + ' ' + feature.annotations[prefix]]) { %>
+  <%= prefix %>:
+<%= callbacks[prefix + ' ' + feature.annotations[prefix]] %><% } %>
 
-<% if (scenario.annotations.before && callbacks['before ' + scenario.annotations.before]) { %>
-  beforeEach:
-<%= callbacks['before ' + scenario.annotations.before] %><% } %>
-
-<% if (scenario.annotations.after && callbacks['after ' + scenario.annotations.after]) { %>
-  afterEach:
-<%= callbacks['after ' + scenario.annotations.after] %><% } %>
-
-<% if (feature.annotations.after && callbacks['after ' + feature.annotations.after]) { %>
-  after:
-<%= callbacks['after ' + feature.annotations.after] %><% } %>
+<% if (scenario.annotations[prefix] && callbacks[prefix + ' ' + scenario.annotations[prefix]]) { %>
+  <%= prefix %>Each:
+<%= callbacks[prefix + ' ' + scenario.annotations.before] %><% } %>
+<% }); %>
 
 <% _.each(scenario.steps, function (step) { %>
   <%= JSON.stringify(step) %>: (browser) ->

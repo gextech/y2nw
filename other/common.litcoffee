@@ -33,7 +33,7 @@ $BIG_PATTERN_TEST.
     ->
       assert.equal params.foo, 'bar'
 
-Given multi-line text $MULTILINE_TEST.
+Given multi-line text\n$MULTILINE_TEST.
 
     (text) ->
       dummy = text

@@ -10,9 +10,9 @@ __run = require('../../helpers/_steps')
 module.exports =
   '@tags': <%=
     JSON.stringify(_.filter((feature.annotations.tags || '')
-      .split(/\W/)
+      .split(/[^\w_-]/)
       .concat((scenario.annotations.tags || '')
-        .split(/\W/))))
+        .split(/[^\w_-]/))))
   %>
   '@disabled': <%= feature.annotations.skip || scenario.annotations.skip ? 'on' : 'off' %>
 

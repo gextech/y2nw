@@ -68,7 +68,9 @@ You can write any Literate CoffeeScript here.
     page = null
     pages = { GoogleSearchPage }
 
-Steps are defined as "one or more sentences, ending with a single dot, followed by a blank-line with a function-block below".
+Steps are defined as "one or more sentences, ending with any of `.,;`, followed by a blank-line with a function-block below".
+
+Declared sentences MUST start with any uppercase letter or a dollar sign for allowing custom pattern-matchers.
 
 Note that you can define many sentences as you want but will only take a single code-block for.
 

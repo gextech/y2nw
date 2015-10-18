@@ -1,6 +1,6 @@
 {
   "name": "y2nw",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Nightwatch tests from Yadda features",
   "main": "lib/index.js",
   "author": {

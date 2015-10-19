@@ -122,7 +122,6 @@ var y2nw = require('y2nw');
 
 y2nw({
   language: 'English',
-  suffix: 'suitcase',
   src: __dirname + '/tests',
   dest: __dirname + '/generated'
 }, function(err) {

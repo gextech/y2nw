@@ -9,14 +9,14 @@ __run = require('../../helpers/_steps')
 
 module.exports =
   '@tags': <%=
-    JSON.stringify(_.filter((feature.annotations.tags || '')
+    JSON.stringify(_filter((feature.annotations.tags || '')
       .split(/[^\w_-]/)
       .concat((scenario.annotations.tags || '')
         .split(/[^\w_-]/))))
   %>
   '@disabled': <%= feature.annotations.skip || scenario.annotations.skip ? 'on' : 'off' %>
 
-<% _.each(['before', 'after'], function (prefix) { %>
+<% _each(['before', 'after'], function (prefix) { %>
 <% if (feature.annotations[prefix] && callbacks[prefix + ' ' + feature.annotations[prefix]]) { %>
   <%= prefix %>:
 <%= callbacks[prefix + ' ' + feature.annotations[prefix]] %><% } %>
@@ -26,7 +26,7 @@ module.exports =
 <%= callbacks[prefix + ' ' + scenario.annotations.before] %><% } %>
 <% }); %>
 
-<% _.each(scenario.steps, function (step) { %>
+<% _each(scenario.steps, function (step) { %>
   <%= JSON.stringify(step) %>: (browser) ->
     __run <%= JSON.stringify(step) %>, { browser }
 <% }) %>

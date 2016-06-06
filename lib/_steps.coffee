@@ -8,20 +8,20 @@ __library = __Yadda.localisation
 <%= header %>
 
 __steps =
-<% _.each(scenarios.steps, function(steps, file) { %>
+<% _each(scenarios.steps, function(steps, file) { %>
   <%= JSON.stringify(file) %>: ->
 
-    params = <%= JSON.stringify(_.omit(scenarios.params[file], 'patterns')) %>
+    params = <%= JSON.stringify(_omit(scenarios.params[file], 'patterns')) %>
 
     __dictionary
-<% _.each(scenarios.params[file].patterns, function(pattern, name) { %>
+<% _each(scenarios.params[file].patterns, function(pattern, name) { %>
     .define('<%= name %>', <%= pattern.indexOf('$') > -1 ? JSON.stringify(pattern) : '/' + pattern + '/' %>)
 <% }) %>
 
 <%= scenarios.code[file] %>
 
     __library
-<% _.each(steps, function(step) { %>
+<% _each(steps, function(step) { %>
     .define <%= JSON.stringify(step.label) %>,
 <%= step.code %>
 

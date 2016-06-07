@@ -1,10 +1,7 @@
-'use strict';
-
-var path = require('path'),
-    y2nw = require('./lib');
+var y2nw = require('./lib');
 
 y2nw({
-  header: [
+  prelude: [
     'assert = require("assert")',
     'STATIC = -> "value"'
   ].join('\n'),

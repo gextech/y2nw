@@ -37,5 +37,5 @@ __hooks.push(require(<%= JSON.stringify(file) %>))
 <% }) %>
 
 module.exports = (step, browser, feature, scenario) ->
-  __hooks.forEach (cb) -> cb.call browser, feature, scenario
+  __hooks.forEach (cb) -> cb?.call browser, feature, scenario
   __run.yadda step, { browser }

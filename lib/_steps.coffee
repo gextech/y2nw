@@ -5,7 +5,7 @@ __dictionary  = new __Yadda.Dictionary()
 __library = __Yadda.localisation
   .<%= language %>.library(__dictionary)
 
-<%= header %>
+<%= prelude %>
 
 __steps =
 <% _each(scenarios.steps, function(steps, file) { %>
@@ -30,5 +30,12 @@ __steps =
 __setup() for __file, __setup of __steps
 __run = new __Yadda.Yadda(__library)
 
-module.exports = ->
-  __run.yadda arguments...
+__hooks = []
+
+<% _each(hooks, function(file) { %>
+__hooks.push(require(<%= JSON.stringify(file) %>))
+<% }) %>
+
+module.exports = (step, browser, feature, scenario) ->
+  __hooks.forEach (cb) -> cb.call browser, feature, scenario
+  __run.yadda step, { browser }

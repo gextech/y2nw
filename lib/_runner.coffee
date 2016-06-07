@@ -7,6 +7,9 @@
 
 __run = require('../../helpers/_steps')
 
+__feature = <%= JSON.stringify(feature.annotations) %>
+__scenario = <%= JSON.stringify(scenario.annotations) %>
+
 module.exports =
   '@tags': <%=
     JSON.stringify(_filter((feature.annotations.tags || '')
@@ -28,7 +31,7 @@ module.exports =
 
 <% _each(scenario.steps, function (step) { %>
   <%= JSON.stringify(step) %>: (browser) ->
-    __run <%= JSON.stringify(step) %>, { browser }
+    __run <%= JSON.stringify(step) %>, browser, __feature, __scenario
 <% }) %>
 
     browser.end()
